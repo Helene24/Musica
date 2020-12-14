@@ -1,0 +1,324 @@
+body{
+    background-color:lightgray;
+}
+
+.logo{
+    display: inline-block;
+}
+
+.img-fluid1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index:1;
+}
+
+.img-fluid2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.nav-link{
+    position: relative;
+    top: 0;
+    color: black;
+    font-size: 20px;
+}
+
+.dropdown-menu {
+    background-color: #DDDDDD;
+}
+
+.Connexion {
+    position: absolute;
+    top: 15px;
+    left: 380px;
+    color: black;
+    z-index: 16;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.GestionUtilisateurs {
+    position: absolute;
+    top: 15px;
+    left: 530px;
+    color: black;
+    z-index: 16;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Info {
+    position: absolute;
+    top: 15px;
+    left: 800px;
+    color: black;
+    z-index: 16;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.EspaceClient {
+    position: absolute;
+    top: 15px;
+    left: 950px;
+    color: black;
+    z-index: 16;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.Panier {
+    position: absolute;
+    top: 15px;
+    left: 1150px;
+    color: black;
+    z-index: 17;
+}
+
+.Pays {
+    position: absolute;
+    top: 15px;
+    left: 1250px;
+    color: black;
+    z-index: 18;
+}
+
+.Produits {
+    position: absolute;
+    top: 65px;
+    left: 500px;
+    color: #FFFFFF;
+    z-index: 3;
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.Service {
+    position: absolute;
+    top: 65px;
+    left: 700px;
+    color: #FFFFFF;
+    z-index: 4;
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.Aide {
+    position: absolute;
+    top: 65px;
+    left: 900px;
+    color: #FFFFFF;
+    z-index: 5;
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.A_propos {
+    position: absolute;
+    top: 65px;
+    left: 1100px;
+    color: #FFFFFF;
+    z-index: 6;
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.Guitares {
+    position: absolute;
+    top: 120px;
+    left: 330px;
+    color: #FFFFFF;
+    z-index: 7;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.Batteries {
+    position: absolute;
+    top: 120px;
+    left: 470px;
+    color: #FFFFFF;
+    z-index: 8;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.Clavier {
+    position: absolute;
+    top: 120px;
+    left: 580px;
+    color: #FFFFFF;
+    z-index: 9;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.Studio {
+    position: absolute;
+    top: 120px;
+    left: 680px;
+    color: #FFFFFF;
+    z-index: 10;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.Sono {
+    position: absolute;
+    top: 120px;
+    left: 780px;
+    color: #FFFFFF;
+    z-index: 11;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.Eclairage {
+    position: absolute;
+    top: 120px;
+    left: 880px;
+    color: #FFFFFF;
+    z-index: 12;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.DJ {
+    position: absolute;
+    top: 120px;
+    left: 1030px;
+    color: #FFFFFF;
+    z-index: 13;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.Cases {
+    position: absolute;
+    top: 120px;
+    left: 1100px;
+    color: #FFFFFF;
+    z-index: 14;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.Accessoires {
+    position: absolute;
+    top: 120px;
+    left: 1200px;
+    color: #FFFFFF;
+    z-index: 15;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.produits {
+    top: 250px;
+}
+
+ul {
+    list-style-type : none;
+}
+
+a:link {
+    text-decoration:none;
+}
+
+h2 {
+    font-family: "Arial" ;
+    color: black;
+    font-weight: bold;
+    text-indent: 45px;
+}
+
+.img-responsive {
+    margin: 0 40px 0 20px;
+}
+
+.img-responsive2 {
+    margin: 0 60px 0 0;
+}
+
+.container-fluid1 {
+    margin: 200px 0 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.container-fluid2 {
+    margin: 50px 0 0 0;
+}
+
+.container-fluid3 {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border-right: 0;
+    border-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    background-color: white;
+}
+
+.container-fluid4 {
+    margin: 200px 0 100px 0;
+}
+
+.container-fluid6 {
+    margin: 200px 0 0 0;
+}
+
+.container-fluid7 {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 50px 0 50px 0;
+}
+
+.titre {
+    text-align: center;
+
+}
+.btn1 {
+    background-color: gray;
+    color: white;
+}
+
+.tooltip .tooltiptext {
+    visibility: visible;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tel {
+    text-align: center;
+    color: #B0413E;
+}
+
+.metadata {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.metadata1 {
+    font-size:20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+

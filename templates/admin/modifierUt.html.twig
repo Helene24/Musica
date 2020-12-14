@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme userForm 'bootstrap_4_layout.html.twig' %}
+{% block title %}Modifier l'utilisateur{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <div class="container-fluid4">
+
+        <h1>Modifier l'utilisateur</h1>
+    <div class="metadata1">
+        {{ form(userForm) }}
+    </div>
+
+{% endblock %}

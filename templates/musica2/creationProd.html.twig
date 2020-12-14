@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formProduit 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <div class="container-fluid4">
+
+            <h1>
+                {% if editMode %}
+                    Modification du produit
+                {% else %}
+                    Création d'un produit
+                {% endif %}
+            </h1>
+
+        {{ form_start(formProduit, {'attr' : {'novalidate': 'novalidate'}}) }}
+        <div class="metadata1">
+        {{ form_row(formProduit.libelleCourt, {'attr' : {'placeholder' : "Libelle court du produit"}}) }}
+        {{ form_row(formProduit.libelleLong, {'attr' : {'placeholder' : "Description du produit"}}) }}
+        {{ form_row(formProduit.categorieId, {'label': 'Catégorie'}) }}
+        {{ form_row(formProduit.fournisseur, {'label': 'Fournisseur'}) }}
+        {{ form_row(formProduit.prixAchat, {'attr' : {'placeholder' : "Prix d'achat"}}) }}
+        {{ form_row(formProduit.prixVente, {'attr' : {'placeholder' : "Prix de vente"}}) }}
+        {{ form_row(formProduit.photo, {'attr' : {'placeholder' : "Photo"}}) }}
+        </div>
+        <button type="submit" class="btn1 btn-lg">
+            {% if editMode %}
+                Enregistrer les modifications
+            {% else %}
+                Ajouter ce produit
+            {% endif %}
+        </button>
+
+        {{ form_end(formProduit) }}
+    </div>
+
+{% endblock %}

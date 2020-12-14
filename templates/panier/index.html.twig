@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier client{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<div class="container-fluid4">
+
+    <h1>Panier client</h1>
+
+    {% if items | length > 0 %}
+     <table class="table">
+         <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Ajout</th>
+                <th>Retrait</th>
+                <th>Total</th>
+                <th>Suppression</th>
+            </tr>
+         </thead>
+         <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.produit.libelleCourt }}</td>
+                <td>{{ item.produit.prixVente }}</td>
+                <td>{{ item.quantite }}</td>
+                <td>
+                    <a href="{{ path('ajoutProduit', {'id': item.produit.id}) }}">
+                        <img class="btn1 btn-sm"
+                             src="{{ asset('image/pictoPlus.png') }}"
+                             alt="ajoutProduit"></a>
+                </td>
+                <td>
+                    <a href="{{ path('retraitProduit', {'id': item.produit.id}) }}">
+                        <img class="btn1 btn-sm"
+                             src="{{ asset('image/pictoMoins.png') }}"
+                             alt="ajoutProduit"></a>
+                </td>
+                <td>{{ item.produit.prixVente * item.quantite }}</td>
+                <td>
+                    <a href="{{ path('supprProduit', {'id': item.produit.id}) }}">
+                        <img class="btn btn-danger btn-sm"
+                             src="{{ asset('image/pictoPoubelle.png') }}"
+                             alt="poubelle"></a>
+                    </a>
+                </td>
+            </tr>
+         {% endfor %}
+         </tbody>
+         <tfoot>
+            <tr>
+                <td colspan="5" class="text-right">Total : </td>
+                <td>{{ total }}</td>
+                <td></td>
+            </tr>
+         </tfoot>
+     </table>
+    {% else %}
+        <p>Panier vide !</p>
+    {% endif %}
+
+</div>
+{% endblock %}

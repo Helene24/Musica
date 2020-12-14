@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <div class="container-fluid4">
+
+        <article>
+            <h2>{{ produit.libelleCourt }}</h2>
+            {% if is_granted ('ROLE_GESTION') %}
+                <p class="metadata">Créé le {{ produit.creation | date('d/m/Y') }} à
+                    {{ produit.creation | date('H/i') }} </p>
+            {% endif %}
+            <div class="metadata1">Catégorie : {{ produit.categorieId.nom }}</div>
+            <div class="metadata1">Fournisseur: {{ produit.fournisseur.nom }}</div>
+            <div class="content">
+                <img src="{{ produit.photo }}" alt="{{ produit.libelleCourt }}"
+                     title="{{ produit.libelleCourt }}">
+                <p class="metadata1">Description : {{ produit.libelleLong | raw }} </p>
+                <p class="metadata1">Prix d'achat : {{ produit.prixAchat | raw }} euros</p>
+                <p class="metadata1">Prix de vente : {{ produit.prixVente }} euros</p>
+            </div>
+
+        </article>
+        {% if is_granted ('ROLE_GESTION') %}
+            <a href="{{ path('ModifProd', {'id' : produit.id}) }}" class="btn1 btn-lg">Modifier ce produit</a>
+        {% endif %}
+        {% if is_granted ('ROLE_ADMIN') %}
+            <a href="{{ path('produitSupprime', {'id' : produit.id}) }}" class="btn1 btn-lg">Supprimer ce produit</a>
+        {% endif %}
+
+    </div>
+{% endblock %}

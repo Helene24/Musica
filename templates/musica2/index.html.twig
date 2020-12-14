@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <div class="container-fluid4">
+        {% if is_granted ('ROLE_ADMIN') %}
+            <section class="produits">
+                <a href="{{ path('CreationProd') }}" class="btn1 btn-lg">Ajouter un produit à cette liste</a>
+            </section>
+        {% endif %}
+            <section class="produits">
+                {% for produit in produits %}
+                    <article>
+                        <h2>{{ produit.libelleCourt }}</h2>
+                        <div class="metadata1">Fournisseur: {{ produit.fournisseur.nom }}</div>
+                        <div class="metadata1">Catégorie: {{ produit.categorieId.nom }}</div>
+                        <div class="content">
+                            <img src="{{ produit.photo }}" alt="{{ produit.libelleCourt }}"
+                                 title="{{ produit.libelleCourt }}">
+                            <p class="metadata1"> Description : {{ produit.libelleLong | raw }} </p>
+                            <a href="{{ path('DetailArt', {'id' : produit.id}) }}"
+                               class="btn1 btn-lg">Lire la suite</a>
+                            <a href="{{ path('ajoutProduit', {'id' : produit.id}) }}" class="btn1 btn-lg">
+                                <i class="fas fa-shopping-cart"></i>Ajouter article au panier </a>
+                        </div>
+                        <hr>
+                    </article>
+                {% endfor %}
+            </section>
+    </div>
+{% endblock %}

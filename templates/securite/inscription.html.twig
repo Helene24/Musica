@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+<div class="container-fluid6">
+
+    <h1 class="titre">Créez vos identifiants </h1>
+<div>
+    {{ form_start(form) }}
+
+    <div class="container-fluid7">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            {{ form_row(form.email, {'label': 'Adresse mail', 'attr': {'placeholder': 'Adresse mail'}}) }}
+            {{ form_row(form.password, {'label': 'Mot de passe', 'attr': {'placeholder': 'Mot de passe'}}) }}
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            {{ form_row(form.confirmPassword, {'label': 'Confirmation du mot de passe',
+                'attr': {'placeholder': 'Répétez votre mot de passe'}}) }}
+        </div>
+    </div>
+</div>
+<div>
+    <h1 class="titre">Créez vos identifiants </h1>
+
+    <div class="container-fluid7">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            {{ form_row(form.username, {'label': 'Pseudo', 'attr': {'placeholder': 'pseudo02'}}) }}
+            {{ form_row(form.nom, {'label': 'Votre nom', 'attr': {'placeholder': 'Durand'}}) }}
+            {{ form_row(form.prenom, {'label': 'Votre prénom', 'attr': {'placeholder': 'Gérard'}}) }}
+            {{ form_row(form.adresse, {'label': 'Votre adresse', 'attr': {'placeholder': '52 rue des épines'}}) }}
+            {{ form_row(form.codePostal, {'label': 'Votre code postal', 'attr': {'placeholder': '80000'}}) }}
+            {{ form_row(form.ville, {'label': 'Votre ville', 'attr': {'placeholder': 'Päris'}}) }}
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div style="border: 2px solid gray; padding: 3px; background-color: darkgray;
+            -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; -moz-border-radius-bottomright: 5px;
+            -moz-border-radius-bottomleft: 5px;">
+                <h2 class="tel">Vos numéros de téléphone</h2>
+            {{ form_row(form.numPortable, {'label': 'Votre numéro de portable', 'attr': {'placeholder': '0612345678'}}) }}
+            {{ form_row(form.numFixe, {'label': 'Votre numéro de fixe', 'attr': {'placeholder': '0322123456'}}) }}
+                <h2 class="tel">Suivez vos commandes par SMS !</h2>
+                <h2 class="tel">GRATUITEMENT !!</h2>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn1 btn-lg">Valider</button>
+    </div>
+
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <div class="container-fluid1">
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+            <img src="{{ asset('image/pub_guitare.png') }}" alt="PubGuitare"
+                 style="height:550px ;width: 100%">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <img src="{{ asset('image/banniere_droite_prix.png') }}" alt="BannierePrix"
+                 style="height:550px; width: 100%">
+        </div>
+    </div>
+
+    <div class="container-fluid2">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <img src="{{ asset('image/banniere_centre_4_pictos.png') }}"
+                 alt="banniere_pictogrammes" width="100%">
+        </div>
+    </div>
+
+    <div class="container-fluid2">
+        <h2>Nos catégories</h2>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="container-fluid3">
+                    <img src="{{ asset('image/CATEGORIES_guitare.png') }}" alt="guitare"
+                         class="img-fluid"/>
+
+                    <img src="{{ asset('image/CATEGORIES_batterie.png') }}" alt="batterie"
+                         class="img-fluid"/>
+
+                    <img src="{{ asset('image/CATEGORIES_piano.png') }}" alt="piano"
+                         class="img-fluid"/>
+
+                    <img src="{{ asset('image/CATEGORIES_micro.png') }}" alt="micro"
+                         class="img-fluid"/>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="container-fluid3">
+                    <img src="{{ asset('image/CATEGORIES_sono.png') }}" alt="sono"
+                         class="img-fluid"/>
+
+                    <img src="{{ asset('image/CATEGORIES_cases.png') }}" alt="cases"
+                         class="img-fluid"/>
+
+                    <img src="{{ asset('image/CATEGORIES_cable.png') }}" alt="cables"
+                         class="img-fluid"/>
+
+                    <img src="{{ asset('image/CATEGORIES_saxo.png') }}" alt="saxo"
+                         class="img-fluid"/>
+                </div>
+            </div>
+    </div>
+    <div class="container-fluid2">
+        <div class="row align">
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
+                <h2>Nos meilleures ventes</h2>
+                    <div>
+                        <img src="{{ asset('image/TOP_VENTE_guitare.png') }}" alt="GuitareTopVente"
+                             class="img-responsive"/>
+                        <img src="{{ asset('image/TOP_VENTES_saxo.png') }}" alt="SaxoTopVente"
+                             class="img-responsive"/>
+                        <img src="{{ asset('image/TOP_VENTES_piano.png') }}" alt="PianosTopVente"
+                             class="img-responsive"/>
+                    </div>
+            </div>
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                <h2>Nos partenaires</h2>
+                    <img src="{{ asset('image/partenaires_4_logos.png') }}" alt="LogosPartenaires"
+                         class="img-responsive2"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid2">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0 m-0">
+            <img src="{{ asset('image/footer_SIMPLE.png') }}" class="img-fluid"
+                 alt="BanniereFin" style="height:550px ;width: 100%">
+        </div>
+    </div>
+
+
+
+{% endblock %}

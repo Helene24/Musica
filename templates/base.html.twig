@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Maquette Village Green{% endblock %}</title>
@@ -13,148 +13,90 @@
 </head>
 
 <body>
-<nav class="container-fluid">
-    <a href="{{ path('home') }}"></a>
-    <div class="row">
+<nav class="p-0 m-0 navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid p-0 m-0">
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <section class="logo">
-                <img class="img-fluid1"
-                     src="{{ asset('image/3_bandes.png') }}" alt="imageBandes">
-                <a href="{{ path('home') }}"> <img class="img-fluid2"
-                      src="{{ asset('image/logo_village_green.png') }}"
-                        alt="logo Villagegreen"></a>
-            </section>
-            <div>
-                <ul class="navbar-nav justify-content-end p-0 m-0">
-                    {% if not app.user %}
-                        <li class="nav-item">
-                            <a class="Connexion" href="{{ path('securite_login') }}">Connexion</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="Connexion" href="{{ path('securite_logout') }}">Déconnexion</a>
-                        </li>
-                    {% endif %}
+        <a class="navbar p-0 m-0" href="{{ path('home') }}">
+            <img class="d-none d-md-block img-fluid2 p-0 m-0"  src="{{ asset('image/logo_village_green.png') }}" >
+            </a>
 
-                    {% if is_granted ('ROLE_ADMIN') %}
-                        <li class="nav-item">
-                            <a class="GestionUtilisateurs" href="{{ path('admin_utilisateurs') }}">Gestion Utilisateurs</a>
-                        </li>
-                    {% endif %}
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    <li class="nav-item">
-                        <a class="Info" href="#" >Infos</a>
-                    </li>
-                    <li class="nav-item">
-                        <div>
-                            <a class="EspaceClient dropdown-toggle" data-toggle="dropdown"
-                               href="#" role="button" aria-haspopup="false" aria-expanded="false" >Espace client</a>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <div class="navbar colomn p-0 m-0">
 
-                            <div class="dropdown-menu" _msthidden="2">
-                                <div style="width: 100px; float:left; height:100px; margin:20px">
-                                    <a class="btn" href="{{ path('securite_login')}}"
-                                       _msthidden="1">Se connecter maintenant</a>
+                        <div class="navbar col-lg-12 truc">
+
+                            {% if not app.user %}
+                                <a href="{{ path('securite_login') }}" class="nav-item nav-link active">Connexion</a>
+
+                            {% else %}
+                                <a href="{{ path('securite_logout') }}"class="nav-item nav-link active">Déconnexion</a>
+                            {% endif %}
+
+                            {% if is_granted ('ROLE_ADMIN') %}
+                                <a href="{{ path('admin_utilisateurs') }}" class="nav-item nav-link active">Gestion Utilisateurs</a>
+                            {% endif %}
+
+
+                            <a href="#" class="nav-item nav-link active">Infos</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Espace client</a>
+                                <div class="dropdown-menu">
+                                    <a href="{{ path('securite_login')}}" class="dropdown-item">Se connecter maintenant</a>
+                                    <a href="{{ path('securiteInscription') }}" class="dropdown-item">S'inscrire</a>
                                 </div>
-                                <div style="width: 100px; float:left; height:100px; margin:20px">
-                                    <a class="btn" href="{{ path('securiteInscription') }}"
-                                       _msthidden="1" >S'inscrire</a>
-                                </div>
-
                             </div>
+                            <a href="{{ path('panier') }}"><img class="nav-item nav-link"src="{{ asset('image/picto_panier.png') }}"
+                                                                alt="panier"></a>
+                            <a href="#"><img class="nav-item nav-link" src="{{asset('image/picto_pays.png') }}"></a>
                         </div>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="{{ path('panier') }}"> <img class="Panier"
-                                                             src="{{ asset('image/picto_panier.png') }}"
-                                                           alt="panier"></a>
-                        </li>
-                    <li class="nav-item">
-                        <img src="{{asset('image/picto_pays.png') }}"
-                             a class="Pays" href="#"></li>
-                </ul>
+
+
+                        <div class="navbar col-lg-12 bidule">
+                            <a href="#" class="nav-item nav-link active">Produits</a>
+                            <a href="#" class="nav-item nav-link active">Service</a>
+                            <a href="#" class="nav-item nav-link active">Aide</a>
+                            <a href="#" class="nav-item nav-link active">APropos</a>
+                        </div>
+
+
+                        <div class="navbar col-lg-12 machin">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Guit/Bass</a>
+                                <div class="dropdown-menu">
+                                    <a href="{{ path('musica2') }}" class="dropdown-item">Guitares électriques</a>
+                                    <a href="#" class="dropdown-item">Guitares classiques</a>
+                                    <a href="#" class="dropdown-item">Guitares Acoustiques & Electro-Acoustiques<</a>
+                                    <a href="#" class="dropdown-item">Basses Electriques</a>
+                                    <a href="#" class="dropdown-item">Basses Acoustiques</a>
+                                    <a href="#" class="dropdown-item">Basses Semi-Acoustiques</a>
+                                    <a href="#" class="dropdown-item">Ukulélés</a>
+                                </div>
+                            </div>
+                            <a href="#" class="nav-item nav-link active">Batteries</a>
+                            <a href="#" class="nav-item nav-link active">Clavier</a>
+                            <a href="#" class="nav-item nav-link active">Studio</a>
+                            <a href="#" class="nav-item nav-link active">Sono</a>
+                            <a href="#" class="nav-item nav-link active">Eclairage</a>
+                        </div>
+
+                </div>
+
             </div>
-
-            <section>
-                <ul class="navbar-nav">
-
-                    <li class="nav-item">
-                        <a class="Produits" href="{{ path('produits_index') }}" >Produits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Service" href="#" >Service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Aide" href="#" >Aide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="A_propos" href="#" >A propos</a>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <ul class="navbar-nav">
-
-                    <li class="nav-item">
-                        <a class="Guitares dropdown-toggle"class="nav-link dropdown-toggle" data-toggle="dropdown"
-                           href="#" role="button" aria-haspopup="true" aria-expanded="false" _msthash="575250"
-                           _msttexthash="171808">Guit/Bass</a>
-
-                        <div class="dropdown-menu" _msthidden="8">
-                            <a class="dropdown-item" href="{{ path('musica2') }}"
-                               _msthidden="1">Guitares électriques</a>
-                            <a class="dropdown-item" href="#"
-                               _msthidden="1">Guitares classiques</a>
-                            <a class="dropdown-item" href="#"
-                               _msthidden="1">Guitares Acoustiques & Electro-Acoustiques</a>
-                            <a class="dropdown-item" href="#"
-                               _msthidden="1">Basses Electriques</a>
-                            <a class="dropdown-item" href="#"
-                               _msthidden="1">Basses Acoustiques</a>
-                            <a class="dropdown-item" href="#"
-                               _msthidden="1">Basses Semi-Acoustiques</a>
-                            <a class="dropdown-item" href="#"
-                               _msthidden="1">Ukulélés</a>
-                            <a class="dropdown-item" href="#"
-                               _msthidden="1">Autres instruments à cordes pincées</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Batteries" href="#" >Batteries</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Clavier" href="#" >Clavier</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Studio" href="#" >Studio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Sono" href="#">Sono </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Eclairage" href="#" >Eclairage</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="DJ" href="#" >DJ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Cases" href="#" >Cases</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="Accessoires" href="#" >Accessoires</a>
-                    </li>
-                </ul>
-            </section>
-        </div>
     </div>
 </nav>
+
+
 
 <div class="container-fluid">
     {% block body %} {% endblock %}
 </div>
 {% block javascripts %}{% endblock %}
-
+</body>
+</html>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

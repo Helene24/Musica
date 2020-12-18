@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6e41eae-c761-4fad-9e93-6233b96f0d45" name="Default Changelist" comment="" />
+    <list default="true" id="c6e41eae-c761-4fad-9e93-6233b96f0d45" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/partenaires_4_logos.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/partenaires_4_logos.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/musica2/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/musica2/home.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +16,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -127,7 +136,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Musica" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Musica" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -169,7 +178,12 @@
       <workItem from="1607790364107" duration="4493000" />
       <workItem from="1607844695284" duration="10638000" />
       <workItem from="1607871033389" duration="3110000" />
-      <workItem from="1607930761097" duration="13853000" />
+      <workItem from="1607930761097" duration="15146000" />
+      <workItem from="1608015116759" duration="33990000" />
+      <workItem from="1608100365786" duration="30212000" />
+      <workItem from="1608181543232" duration="17796000" />
+      <workItem from="1608209240167" duration="10902000" />
+      <workItem from="1608267915533" duration="12165000" />
     </task>
     <servers />
   </component>
@@ -189,10 +203,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606928854754" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1606742017207">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1608184352284">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606742017207" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608184352284" />
     <state x="346" y="49" key="search.everywhere.popup" timestamp="1606742016094">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

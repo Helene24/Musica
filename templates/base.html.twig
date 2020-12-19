@@ -1,33 +1,141 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Maquette Village Green{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
           crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
 
 <body>
-<nav class="p-0 m-0 navbar navbar-expand-md navbar-light bg-light">
+
+
+
+  <nav class="p-0 m-0 navbar navbar-expand-md navbar-light bg-light">
+      <div class="container-fluid p-0 m-0">
+          <a class="navbar p-0 m-0" href="{{ path('home') }}">
+              <img class="d-none d-md-block img-fluid2 p-0 m-0" src="{{ asset('image/logo_village_green.png') }}">
+          </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse colomn " id="navbarCollapse">
+            <div class="navbar-collapse row p-0 m-0 yes">
+
+                <ul class="p-0 m-0 navbar-collapse truc">
+                    {% if not app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link active"  href="{{ path('securite_login') }}">Connexion</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link active"  href="{{ path('securite_logout') }}">Déconnexion</a>
+                        </li>
+                    {% endif %}
+
+                    {% if is_granted ('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link active"  href="{{ path('admin_utilisateurs') }}">Gestion Utilisateurs</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#">Infos</a>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">Espace client
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{ path('securite_login')}}">Se connecter maintenant</a></li>
+                            <li><a class="dropdown-item" href="{{ path('securiteInscription') }}">S'inscrire</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-link active">
+                        <a  href="{{ path('panier') }}"><img src="{{ asset('image/picto_panier.png') }}"
+                                                             alt="panier"></a>
+                    </li>
+                    <li class="nav-link active">
+                        <a href="#"><img src="{{ asset('image/picto_pays.png') }}"
+                                         alt="panier"></a>
+                    </li>
+                </ul>
+                <ul class="p-0 m-0 navbar-collapse  bidule">
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#">Produits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Aide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#">A Propos</a>
+                    </li>
+                </ul>
+                <ul class="p-0 m-0 navbar-collapse machin">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                           id="navbarDropdownMenuLink2" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">Guit/Bass
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                            <li><a class="dropdown-item" href="{{ path('musica2') }}">Guitares classiques</a></li>
+                            <li><a class="dropdown-item" href="#">Basses électriques</a></li>
+                            <li><a class="dropdown-item" href="#">Basses Acoustiques</a></li>
+                            <li><a class="dropdown-item" href="#">Basses Semi-Acoustiques</a></li>
+                            <li><a class="dropdown-item" href="#">Ukulélé</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#">Batteries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#">Clavier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#">Studio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#">Sono</a>
+                    </li>
+                </ul>
+
+            </div>
+           {#  <a class="navbar-brand" href="{{ path('home') }}">
+            <img class="d-none d-md-block img-fluid2 p-0 m-0" src="{{ asset('image/logo_village_green.png') }}"></a>#}
+
+
+
+        </div>
+      </div>
+</nav>
+
+{#<nav class="p-0 m-0 navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid p-0 m-0">
+      <a class="navbar p-0 m-0" href="{{ path('home') }}">
+          <img class="d-none d-md-block img-fluid2 p-0 m-0" src="{{ asset('image/logo_village_green.png') }}">
+      </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"
+                     >
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <a class="navbar p-0 m-0" href="{{ path('home') }}">
-            <img class="d-none d-md-block img-fluid2 p-0 m-0"  src="{{ asset('image/logo_village_green.png') }}" >
-            </a>
 
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <div class="navbar colomn p-0 m-0">
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <div class="navbar colomn p-0 m-0">
 
-                        <div class="navbar col-lg-12 truc">
+                <div class="navbar col-lg-12 truc">
 
                             {% if not app.user %}
                                 <a href="{{ path('securite_login') }}" class="nav-item nav-link active">Connexion</a>
@@ -82,12 +190,10 @@
                             <a href="#" class="nav-item nav-link active">Sono</a>
                             <a href="#" class="nav-item nav-link active">Eclairage</a>
                         </div>
-
                 </div>
-
             </div>
     </div>
-</nav>
+</nav>#}
 
 
 
@@ -95,8 +201,7 @@
     {% block body %} {% endblock %}
 </div>
 {% block javascripts %}{% endblock %}
-</body>
-</html>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -106,11 +211,9 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous">
 </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
 </script>
-
 
 </body>
 
